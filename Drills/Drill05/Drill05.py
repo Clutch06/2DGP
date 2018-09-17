@@ -197,15 +197,15 @@ def move_to_coordinate_10():
 
 
 def move():
-    # move_to_coordinate_01()
-    # move_to_coordinate_02()
-    # move_to_coordinate_03()
-    # move_to_coordinate_04()
-    # move_to_coordinate_05()
-    # move_to_coordinate_06()
-    # move_to_coordinate_07()
-    # move_to_coordinate_08()
-    # move_to_coordinate_09()
+    move_to_coordinate_01()
+    move_to_coordinate_02()
+    move_to_coordinate_03()
+    move_to_coordinate_04()
+    move_to_coordinate_05()
+    move_to_coordinate_06()
+    move_to_coordinate_07()
+    move_to_coordinate_08()
+    move_to_coordinate_09()
     move_to_coordinate_10()
 
 
