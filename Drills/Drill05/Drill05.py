@@ -7,19 +7,22 @@ character = load_image('animation_sheet.png')
 
 
 def move_to_coordinate_01():
-    x, y = 203, 535
     frame = 0
-    while x > 132:
-        while y > 243:
-            clear_canvas()
-            grass.draw(400, 30)
-            character.clip_draw(frame * 100, 0, 100, 100, x, y)
-            update_canvas()
-            frame = (frame + 1) % 8
-            x -= 2
-            y -= 5
-            delay(0.05)
-            get_events()
+    count = 0
+    x = 203
+    y = 535
+    move_shortest_x = (132 - 203) / 100
+    move_shortest_y = (243 - 535) / 100
+    while count <= 100:
+        clear_canvas()
+        grass.draw(400, 30)
+        character.clip_draw(frame * 100, 0, 100, 100, x, y)
+        update_canvas()
+        count += 1
+        x += move_shortest_x
+        y += move_shortest_y
+        frame = (frame + 1) % 8
+        delay(0.05)
 
 
 def move_to_coordinate_02():
