@@ -159,7 +159,22 @@ def move_to_coordinate_08():
 
 
 def move_to_coordinate_09():
-    pass
+    frame = 0
+    count = 0
+    x = 682
+    y = 336
+    move_shortest_x = (712 - 682) / 100
+    move_shortest_y = (349 - 336) / 100
+    while count <= 100:
+        clear_canvas()
+        grass.draw(400, 30)
+        character.clip_draw(frame * 100, 100, 100, 100, x, y)
+        update_canvas()
+        count += 1
+        x += move_shortest_x
+        y += move_shortest_y
+        frame = (frame + 1) % 8
+        delay(0.05)
 
 
 def move_to_coordinate_10():
@@ -174,7 +189,7 @@ def move():
     # move_to_coordinate_05()
     # move_to_coordinate_06()
     # move_to_coordinate_07()
-    move_to_coordinate_08()
+    # move_to_coordinate_08()
     move_to_coordinate_09()
     move_to_coordinate_10()
 
