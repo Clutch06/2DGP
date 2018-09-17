@@ -3,11 +3,23 @@ from pico2d import *
 open_canvas()
 
 grass = load_image('grass.png')
-character = load_image('character.png')
+character = load_image('animation_sheet.png')
 
 
 def move_to_coordinate_01():
-    pass
+    x, y = 203, 535
+    frame = 0
+    while x > 132:
+        while y > 243:
+            clear_canvas()
+            grass.draw(400, 30)
+            character.clip_draw(frame * 100, 0, 100, 100, x, y)
+            update_canvas()
+            frame = (frame + 1) % 8
+            x -= 2
+            y -= 5
+            delay(0.05)
+            get_events()
 
 
 def move_to_coordinate_02():
@@ -63,5 +75,4 @@ while True:
     move()
 
 
-    
 close_canvas()
