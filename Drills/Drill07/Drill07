@@ -10,6 +10,13 @@ character = load_image('animation_sheet.png')
 
 def move(p1, p2):
     frame = 0
+    dir = 0
+
+    if p1[0] <= p2[0]:
+        dir = 1
+
+    if p1[0] > p2[0]:
+        dir = 0
 
     for i in range(0, 100 + 1, 2):
         clear_canvas()
@@ -17,13 +24,13 @@ def move(p1, p2):
         t = i / 100
         x = (1 - t) * p1[0] + t * p2[0]
         y = (1 - t) * p1[1] + t * p2[1]
-        character.clip_draw(frame * 100, 0, 100, 100, x, y)
+        character.clip_draw(frame * 100, dir * 100, 100, 100, x + 600, y + 400)
         update_canvas()
         frame = (frame + 1) % 8
         delay(0.05)
 
 size = 20
-random_points = [(random.randint(-600, 600), random.randint(-480, 480)) for i in range(size)]
+random_points = [(random.randint(-600, 600), random.randint(-400, 400)) for i in range(size)]
 n = 1
 
 while True:
