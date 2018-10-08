@@ -24,8 +24,32 @@ class Boy:
         self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
 
 
-class Ball:
-    pass
+class SmallBall:
+    def __init__(self):
+        self.x, self.y = random.randint(20, 780), 0
+        self.image = load_image('ball21x21.png')
+
+    def update(self):
+        self.y -= random.randint(1, 10)
+        if self.y == 90:
+            self.y -= 0
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
+
+
+class BigBall:
+    def __init__(self):
+        self.x, self.y = random.randint(20, 780), 0
+        self.image = load_image('ball41x41.png')
+
+    def update(self):
+        self.y -= random.randint(1, 10)
+        if self.y == 90:
+            self.y -= 0
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
 
 
 open_canvas()
