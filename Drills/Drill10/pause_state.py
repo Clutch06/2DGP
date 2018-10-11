@@ -21,8 +21,8 @@ def handle_event():
     for event in events:
         if event.type == SDL_QUIT:
             game_framework.quit()
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_q):
-            game_framework.pop_state(main_state)
+        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_p):
+            game_framework.pop_state()
 
 
 def draw():

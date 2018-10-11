@@ -1,4 +1,5 @@
 import game_framework
+import main_state
 from pico2d import *
 
 
@@ -14,9 +15,6 @@ def enter():
 def exit():
     global image
     del(image)
-
-
-import main_state
 
 
 def handle_events():
