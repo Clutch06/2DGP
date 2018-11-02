@@ -110,6 +110,9 @@ class SleepState:
     @staticmethod
     def enter(boy, event):
         boy.frame = 0
+        boy.wake_up = False
+        boy.angle = 0
+        boy.ghost_angle = 0.0
 
     @staticmethod
     def exit(boy, event):
@@ -118,6 +121,15 @@ class SleepState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
+        if boy.angle >= 0.5 and boy.wake_up == False:
+            boy.wake_up = True
+            boy.time = get_time()
+        else:
+            boy.angle += 0.01
+        if boy.wake_up == True:
+            if get_time() - boy.time > 0.05:
+                boy.ghost_angle += 36
+                boy.time = get_time()
 
     @staticmethod
     def draw(boy):
