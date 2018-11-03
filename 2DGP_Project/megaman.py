@@ -53,6 +53,9 @@ class RunState:
     def draw(megaman):
         megaman.image.clip_draw(int(megaman.frame) * 35, 35, 35, 35, megaman.x, megaman.y)
 
+class JumpState:
+    def enter():
+
 
 
 next_state_table = {
@@ -63,7 +66,7 @@ next_state_table = {
 class MegaMan:
 
     def __init__(self):
-        self.x, self.y = 800 // 2, 90
+        self.x, self.y = 100, 50
         self.image = load_image('run_animation.png')
         self.dir = 1
         self.velocity = 0

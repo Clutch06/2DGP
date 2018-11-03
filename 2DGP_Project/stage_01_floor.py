@@ -9,4 +9,4 @@ class Stage01Floor:
         pass
 
     def draw(self):
-        self.image.draw(300, 35)
+        self.image.draw(400, 35)
