@@ -54,12 +54,23 @@ class RunState:
         megaman.image.clip_draw(int(megaman.frame) * 35, 35, 35, 35, megaman.x, megaman.y)
 
 class JumpState:
-    def enter():
+    @staticmethod
+    def enter(megaman, event):
+        pass
+
+class SlideState:
+    @staticmethod
+    def enter(megaman, event):
+        pass
+
+
 
 
 
 next_state_table = {
-    # RunState: {RIGHT_UP: IdleState, LEFT_UP: IdleState, LEFT_DOWN: IdleState, RIGHT_DOWN: IdleState, SPACE: RunState}
+    RunState: {JUMP: JumpState, SLIDE_DOWN: SlideState, SLIDE_UP: SlideState, SHOOT: RunState},
+    JumpState: {SHOOT: JumpState},
+    SlideState: {JUMP: JumpState, SLIDE_DOWN: RunState, SLIDE_UP: RunState},
 }
 
 
